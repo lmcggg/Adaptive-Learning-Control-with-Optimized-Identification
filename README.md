@@ -142,10 +142,7 @@ The ALCOI algorithm is based on the theory of optimizing the exploration policy 
 - Nonlinear control theory
 - Adaptive control
 
-## Technical Soundness
+## my comment
 
-The implementation has been verified to be logically sound with:
-- Correct computation of Model Task Hessian and Fisher Information
-- Proper parameter estimation using constrained nonlinear least squares
-- Appropriate balance between exploration and exploitation
-- Robust numerical implementation with regularization safeguards 
+This is a very good method for solving how to generate valid trajectory data in system identification to effectively identify key parameters. Moreover, it performs well and has good reproducibility. However, it requires frequent solving of non-convex optimization problems, which may not be suitable for high-dimensional parameters and complex dynamic models. It needs to satisfy the Lojasiewicz condition, smoothness assumptions, etc., which may be difficult to verify in actual systems.
+
