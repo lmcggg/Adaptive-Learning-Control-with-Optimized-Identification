@@ -1,6 +1,7 @@
 # ALCOI Algorithm Implementation in MATLAB
 
 This repository contains a MATLAB implementation of the Adaptive Learning Control with Optimized Identification (ALCOI) algorithm. The algorithm optimizes the exploration policy for system identification to minimize control costs in nonlinear systems with unknown dynamics.
+the paper is “Active Learning for Control-Oriented Identificationof Nonlinear Systems”-Bruce D. Lee, Ingvar Ziemann, George J. Pappas, Nikolai Matni（2024 IEEE 63rd Conference on Decision and Control (CDC)）,thanks for their brilliant idea。
 
 ## Algorithm Overview
 
@@ -22,7 +23,7 @@ where:
 - U_t is the control input
 - φ_i are the unknown parameters to be identified
 - ψ(x) is a nonlinear function with two implementations:
-  - 'original': ψ(x) = 5·x/(|x|+ε)·exp(-|x|²)
+  - 'complex': ψ(x) = 5·x/(|x|+ε)·exp(-|x|²)
   - 'paper': ψ(x) = 5·exp(-x²)
 - W_t is process noise with standard deviation σ_w
 
@@ -105,6 +106,27 @@ The implementation demonstrates several important findings:
 2. The performance advantage of ALCOI increases with higher noise levels
 3. ALCOI provides better tracking performance for reference trajectories
 4. The optimized exploration policy significantly improves parameter estimation accuracy
+![image](https://github.com/user-attachments/assets/350388f2-63a0-4b8e-88c9-d6f13dc3712a)
+
+![image](https://github.com/user-attachments/assets/80c67da7-4684-4095-b1df-fa56cc4b36b3)
+
+![image](https://github.com/user-attachments/assets/1de8953f-78f5-4c57-9039-c5a1a6cbb186)
+
+![image](https://github.com/user-attachments/assets/eb097e70-55e8-42cb-9b0c-01d4c2158b17)
+
+![image](https://github.com/user-attachments/assets/3b7f93c9-8c7d-490e-ab69-7d261fd2fa7a)
+
+Synthesizing final controller
+Evaluating policies...
+Initial policy cumulative cost: 1485.3375
+ALCOI policy cumulative cost: 112.5263
+LQR policy cumulative cost: 284.4591
+
+控制目标误差比较（状态跟踪误差）:
+Initial policy累积误差: 179.3296
+ALCOI policy累积误差: 37.4765
+LQR policy累积误差: 111.1595
+Parameter estimation error: 10.4670
 
 ## Requirements
 
